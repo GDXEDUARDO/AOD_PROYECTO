@@ -49,7 +49,7 @@ class RadioController extends Controller
      */
     public function show(Radio $radio)
     {
-        //
+        return view('radios.show', compact('radio'));
     }
 
     /**

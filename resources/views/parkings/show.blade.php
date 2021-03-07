@@ -8,11 +8,11 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-md-8">
-                    <h2 class="card-title">Listado de veiculos que ingresan a bodega</h2>
+                    <h2 class="card-title"><p>{{ $parking->brand }}</p></h2>
                 </div>
                     <div class="col-md-4">
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a class="btn btn-primary" href="{{route('parkings.create')}}">+ Nuevo</a>
+                            <a class="btn btn-primary" href="{{route('parkings.index')}}"><-Volver</a>
                         </div>
                     </div>
                 </div>
@@ -29,18 +29,13 @@
                         <th>Fecha y Hora de Entrada</th>
                         <th>Fecha y Hora de Salida</th>
                         <th>Información</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                @forelse($parkings as $parking)
                     <tr>
-                        <td><p class="text-uppercase">{{ $parking->matricule }}</p></td>
-                        <td>
-                            <a class="btn btn-info btn-small" href="{{route('parkings.show', $parking->id)}}">
-                            <p>{{ $parking->brand }}</p>
-                        </td>
+                        <td><p>{{ $parking->matricule }}</p></td>
+                        <td><p>{{ $parking->brand }}</p></td>
                         <td><p>{{ $parking->description }}</p></td>
                         <td><p>{{ $parking->date_and_time_of_entry }}</p></td>
                         <td><p>{{$parking->date_and_time_of_departure}}</p></td>
@@ -50,12 +45,17 @@
                             <p><b>Número de Puertas:</b>{{ $parking->num_doors}}</p>
                             <p><b>Nombre del conductor:</b>{{ $parking->drivers_name}}</p>
                         </td>
-                        <td>Ver | Editar | Eliminar</td>
-                @empty
-                    <h1>La tabla no tiene datos :'c</h1>
+                       
                     </tr>
-                @endforelse
             </tbody>
         </table>
+    </div>
+    <div class="card-footer">
+        <div class="col">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a class="btn btn-primary" href="{{route('parkings.edit', $parking->id)}}">Editar</a>
+                <a class="btn btn-danger" href="{{route('parkings.destroy', $parking->id)}}">Eliminar</a>
+             </div>
+        </div>
     </div>
 </div>

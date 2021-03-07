@@ -49,7 +49,7 @@ class AnnouncerController extends Controller
      */
     public function show(Announcer $announcer)
     {
-        //
+        return view('announcers.show', compact('announcer'));
     }
 
     /**

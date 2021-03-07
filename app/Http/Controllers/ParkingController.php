@@ -49,7 +49,7 @@ class ParkingController extends Controller
      */
     public function show(Parking $parking)
     {
-        //
+        return view('parkings.show', compact('parking'));
     }
 
     /**
