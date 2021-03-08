@@ -30,7 +30,7 @@
                         <th>Fecha y Hora de Inicio del Programa</th>
                         <th>Fecha y Hora de Final del Programa</th>
                         <th>Cancion de la Semana</th>
-                        <th>Acciones</th>
+                       
                     </tr>
                 </thead>
 
@@ -53,7 +53,7 @@
                         <td><p>{{$radio->program_start_date_and_time}}</p></td>
                         <td><p>{{$radio->end_date_and_time_of_the_program}}</p></td>
                         <td><p>{{$radio->song_of_the_week}}</p></td>
-                        <td>Ver | Editar | Eliminar</td>
+                    
                 @empty
                     <h1>La tabla no tiene datos :'c</h1>
                     </tr>

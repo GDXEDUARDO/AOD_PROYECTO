@@ -28,7 +28,7 @@
                         <th>Fecha de salida del artículo</th>
                         <th>Número de Orden de Retiro</th>
                         <th>Información</th>
-                        <th>Acciones</th>
+
                     </tr>
                 </thead>
 
@@ -51,7 +51,7 @@
                             <p><b>Cantidad de Retiro:</b>{{ $article->amount_of_withdrawal}}</p>
                             <p><b>Cantidad en existencia:</b>{{ $article->quantity_in_existence}}</p>
                         </td>
-                        <td>Ver | Editar | Eliminar</td>
+
                 @empty
                     <h1>La tabla no tiene datos :'c</h1>
                     </tr>

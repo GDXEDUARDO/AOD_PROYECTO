@@ -27,7 +27,7 @@
                         <th>Fecha y Hora de Entrada</th>
                         <th>Fecha y Hora de Salida</th>
                         <th>Minutos en Cabina</th>
-                        <th>Acciones</th>
+                      
                     </tr>
                 </thead>
 
@@ -44,7 +44,7 @@
                         <td><p>{{ $announcer->date_and_time_of_entry }}</p></td>
                         <td><p>{{$announcer->date_and_time_of_departure}}</p></td>
                         <td><p>{{ $announcer->minutes_in_the_cabin}}</p></td>
-                        <td>Ver | Editar | Eliminar</td>
+
                 @empty
                     <h1>La tabla no tiene datos :'c</h1>
                     </tr>

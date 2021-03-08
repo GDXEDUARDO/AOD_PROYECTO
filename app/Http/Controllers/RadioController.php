@@ -60,7 +60,7 @@ class RadioController extends Controller
      */
     public function edit(Radio $radio)
     {
-        //
+        return view('radios.edit', compact('radio'));
     }
 
     /**
@@ -72,7 +72,9 @@ class RadioController extends Controller
      */
     public function update(Request $request, Radio $radio)
     {
-        //
+        $dataRadio = request()->except('_token');
+        $radio->update($dataRadio);
+        return redirect()->to(url('/radios'));
     }
 
     /**

@@ -38,7 +38,8 @@ class AnnouncerController extends Controller
     {
         $announcer = request()->except('_token');
         Announcer::insert($announcer);
-        return view('announcers.index');
+        return redirect()->to(url('/announcers'));
+        //return view('announcers.index');
     }
 
     /**
@@ -61,6 +62,7 @@ class AnnouncerController extends Controller
     public function edit(Announcer $announcer)
     {
         //
+        return view('announcers.edit', compact('announcer'));
     }
 
     /**
@@ -72,7 +74,9 @@ class AnnouncerController extends Controller
      */
     public function update(Request $request, Announcer $announcer)
     {
-        //
+        $dataAnnouncer = request()->except('_token');
+        $announcer->update($dataAnnouncer);
+        return redirect()->to(url('/announcers'));
     }
 
     /**

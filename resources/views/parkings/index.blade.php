@@ -29,7 +29,7 @@
                         <th>Fecha y Hora de Entrada</th>
                         <th>Fecha y Hora de Salida</th>
                         <th>Información</th>
-                        <th>Acciones</th>
+                      
                     </tr>
                 </thead>
 
@@ -50,7 +50,7 @@
                             <p><b>Número de Puertas:</b>{{ $parking->num_doors}}</p>
                             <p><b>Nombre del conductor:</b>{{ $parking->drivers_name}}</p>
                         </td>
-                        <td>Ver | Editar | Eliminar</td>
+
                 @empty
                     <h1>La tabla no tiene datos :'c</h1>
                     </tr>

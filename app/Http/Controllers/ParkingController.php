@@ -60,7 +60,7 @@ class ParkingController extends Controller
      */
     public function edit(Parking $parking)
     {
-        //
+        return view('parkings.edit', compact('parking'));
     }
 
     /**
@@ -72,7 +72,9 @@ class ParkingController extends Controller
      */
     public function update(Request $request, Parking $parking)
     {
-        //
+        $dataParking = request()->except('_token');
+        $parking->update($dataParking);
+        return redirect()->to(url('/parkings'));
     }
 
     /**

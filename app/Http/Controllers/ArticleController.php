@@ -60,7 +60,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('articles.edit', compact('article'));
     }
 
     /**
@@ -72,7 +72,9 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $dataArticle = request()->except('_token');
+        $article->update($dataArticle);
+        return redirect()->to(url('/articles'));
     }
 
     /**
