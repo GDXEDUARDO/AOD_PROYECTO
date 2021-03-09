@@ -85,6 +85,7 @@ class RadioController extends Controller
      */
     public function destroy(Radio $radio)
     {
-        //
+        $radio->delete();
+        return redirect()->to(url('/radios'));
     }
 }

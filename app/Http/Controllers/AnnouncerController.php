@@ -87,6 +87,7 @@ class AnnouncerController extends Controller
      */
     public function destroy(Announcer $announcer)
     {
-        //
+        $announcer->delete();
+        return redirect()->to(url('/announcers'));
     }
 }
